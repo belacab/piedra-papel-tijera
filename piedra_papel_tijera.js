@@ -80,7 +80,6 @@ function Play(playerchoice) {
     let cpu_selection = document.getElementById('cpu_selection')
     let image = document.createElement("img")
     image.src = imagenes[computerSelection]
-    image.width = 150
     cpu_selection.innerHTML = ""
     cpu_selection.appendChild(image)
     let resultado = document.getElementById("Resultado")
