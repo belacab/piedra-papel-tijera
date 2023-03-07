@@ -17,8 +17,9 @@ body {
 }
 
 img{
-    width: 30%;
+    width: 20%;
     aspect-ratio: 3/2;
     object-fit: contain;
     
 }
+

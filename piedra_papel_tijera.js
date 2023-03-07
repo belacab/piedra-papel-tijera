@@ -71,10 +71,11 @@ function RoundGame(playerSelection, computerSelection) {
     //console.log(playerSelection, computerSelection)
 }
 
-function Game(RoundGame) {
-    for (let i = 0; i < 5; i++) {
-    }
-}
+// cambiar por un contador.     function Game(RoundGame) {
+    //for (let i = 0; i < 5; i++) {
+  //  }
+//}
+
 function Play(playerchoice) {
     const computerSelection = getComputerChoice()
     let cpu_selection = document.getElementById('cpu_selection')
@@ -83,16 +84,22 @@ function Play(playerchoice) {
     cpu_selection.innerHTML = ""
     cpu_selection.appendChild(image)
     let resultado = document.getElementById("Resultado")
+    let totales = document.getElementById("totales")
     let game_result = RoundGame(playerchoice, computerSelection)
     
     resultado.textContent = game_result.message
     if (game_result.player_won === true) {
         resultado.className = "winner"
+        wins = wins + 1
     }else if(game_result.player_won === false) {
         resultado.className = "loser"
+        loses = loses + 1
     }else {
         resultado.className = "tie"
+        ties = ties + 1
     }
+    totales.textContent = "Ganaste " + wins + " Perdiste " + loses + " Empataste " + ties
+    console.log(wins, loses, ties)
 
     
 }
@@ -101,3 +108,20 @@ const imagenes = {
     paper: "https://e7.pngegg.com/pngimages/527/119/png-clipart-paper-loose-leaf-drawing-illustration-paper-miscellaneous-television.png",
     scissor: "https://png.pngtree.com/element_our/20190602/ourlarge/pngtree-cartoon-art-scissors-illustration-image_1401856.jpg"
 }
+
+var wins = 0
+var loses = 0
+var ties = 0
+
+function Reboot(){
+    wins = 0;
+    loses = 0;
+    ties = 0; 
+    let totales = document.getElementById("totales")
+    totales.textContent = ""
+}
+
+//document.querySelector("#totales")
+
+
+    
